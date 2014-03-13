@@ -771,8 +771,7 @@ function PostSlide(b) {
                 } else {
                     if("summary" in G[F]) {
                         d = G[F].summary.$t
-                    } else {
-                        d = G.summary.$t
+                    }
                     }
                 }
                 d = d.replace(/<\S[^>]*>/g, "");
@@ -788,7 +787,7 @@ function PostSlide(b) {
                 C = f.MonthNames[parseInt(E, 10) - 1];
                 H = '<a class="morelink" href="' + k + '">Read More</a>';
                 M += '<li class="uj_slider_item"><div class="slider_img"><a title="' + e + '" class="" href="' + k + '"><img src="' + D +
-                    '"/></a></div><div class="slider_caption"><h3><a href="' + k + '">' + e + "</a></h3><p> Posted by " + z + "</p>" + d + " <p>" + H +
+                    '"/></a></div><div class="slider_caption"><h3><a href="' + k + '">' + e + "</a></h3>" + d + " <p>" + H +
                     "</p></div></li>"
             }
             g.find("ul.slides").append(M);
