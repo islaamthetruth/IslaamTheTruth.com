@@ -772,7 +772,7 @@ function PostSlide(b) {
                     if("summary" in G[F]) {
                         d = G[F].summary.$t
                     } else {
-                        d = "<p></p>"
+                        d = G.summary.$t
                     }
                 }
                 d = d.replace(/<\S[^>]*>/g, "");
