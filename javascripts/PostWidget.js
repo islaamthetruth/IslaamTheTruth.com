@@ -1,233 +1,231 @@
-/* Origin : http://yourjavascript.com/251322971441/postwidgettb2.js  */
-
 jQuery.easing.jswing = jQuery.easing.swing;
 jQuery.extend(jQuery.easing, {
     def: "easeOutQuad",
-    swing: function (e, f, a, h, g) {
-        return jQuery.easing[jQuery.easing.def](e, f, a, h, g)
+    swing: function (m, l, b, d, k) {
+        return jQuery.easing[jQuery.easing.def](m, l, b, d, k)
     },
-    easeInQuad: function (e, f, a, h, g) {
-        return h * (f /= g) * f + a
+    easeInQuad: function (m, l, b, d, k) {
+        return d * (l /= k) * l + b
     },
-    easeOutQuad: function (e, f, a, h, g) {
-        return -h * (f /= g) * (f - 2) + a
+    easeOutQuad: function (m, l, b, d, k) {
+        return -d * (l /= k) * (l - 2) + b
     },
-    easeInOutQuad: function (e, f, a, h, g) {
-        if((f /= g / 2) < 1) {
-            return h / 2 * f * f + a
+    easeInOutQuad: function (m, l, b, d, k) {
+        if((l /= k / 2) < 1) {
+            return d / 2 * l * l + b
         }
-        return -h / 2 * ((--f) * (f - 2) - 1) + a
+        return -d / 2 * ((--l) * (l - 2) - 1) + b
     },
-    easeInCubic: function (e, f, a, h, g) {
-        return h * (f /= g) * f * f + a
+    easeInCubic: function (m, l, b, d, k) {
+        return d * (l /= k) * l * l + b
     },
-    easeOutCubic: function (e, f, a, h, g) {
-        return h * ((f = f / g - 1) * f * f + 1) + a
+    easeOutCubic: function (m, l, b, d, k) {
+        return d * ((l = l / k - 1) * l * l + 1) + b
     },
-    easeInOutCubic: function (e, f, a, h, g) {
-        if((f /= g / 2) < 1) {
-            return h / 2 * f * f * f + a
+    easeInOutCubic: function (m, l, b, d, k) {
+        if((l /= k / 2) < 1) {
+            return d / 2 * l * l * l + b
         }
-        return h / 2 * ((f -= 2) * f * f + 2) + a
+        return d / 2 * ((l -= 2) * l * l + 2) + b
     },
-    easeInQuart: function (e, f, a, h, g) {
-        return h * (f /= g) * f * f * f + a
+    easeInQuart: function (m, l, b, d, k) {
+        return d * (l /= k) * l * l * l + b
     },
-    easeOutQuart: function (e, f, a, h, g) {
-        return -h * ((f = f / g - 1) * f * f * f - 1) + a
+    easeOutQuart: function (m, l, b, d, k) {
+        return -d * ((l = l / k - 1) * l * l * l - 1) + b
     },
-    easeInOutQuart: function (e, f, a, h, g) {
-        if((f /= g / 2) < 1) {
-            return h / 2 * f * f * f * f + a
+    easeInOutQuart: function (m, l, b, d, k) {
+        if((l /= k / 2) < 1) {
+            return d / 2 * l * l * l * l + b
         }
-        return -h / 2 * ((f -= 2) * f * f * f - 2) + a
+        return -d / 2 * ((l -= 2) * l * l * l - 2) + b
     },
-    easeInQuint: function (e, f, a, h, g) {
-        return h * (f /= g) * f * f * f * f + a
+    easeInQuint: function (m, l, b, d, k) {
+        return d * (l /= k) * l * l * l * l + b
     },
-    easeOutQuint: function (e, f, a, h, g) {
-        return h * ((f = f / g - 1) * f * f * f * f + 1) + a
+    easeOutQuint: function (m, l, b, d, k) {
+        return d * ((l = l / k - 1) * l * l * l * l + 1) + b
     },
-    easeInOutQuint: function (e, f, a, h, g) {
-        if((f /= g / 2) < 1) {
-            return h / 2 * f * f * f * f * f + a
+    easeInOutQuint: function (m, l, b, d, k) {
+        if((l /= k / 2) < 1) {
+            return d / 2 * l * l * l * l * l + b
         }
-        return h / 2 * ((f -= 2) * f * f * f * f + 2) + a
+        return d / 2 * ((l -= 2) * l * l * l * l + 2) + b
     },
-    easeInSine: function (e, f, a, h, g) {
-        return -h * Math.cos(f / g * (Math.PI / 2)) + h + a
+    easeInSine: function (m, l, b, d, k) {
+        return -d * Math.cos(l / k * (Math.PI / 2)) + d + b
     },
-    easeOutSine: function (e, f, a, h, g) {
-        return h * Math.sin(f / g * (Math.PI / 2)) + a
+    easeOutSine: function (m, l, b, d, k) {
+        return d * Math.sin(l / k * (Math.PI / 2)) + b
     },
-    easeInOutSine: function (e, f, a, h, g) {
-        return -h / 2 * (Math.cos(Math.PI * f / g) - 1) + a
+    easeInOutSine: function (m, l, b, d, k) {
+        return -d / 2 * (Math.cos(Math.PI * l / k) - 1) + b
     },
-    easeInExpo: function (e, f, a, h, g) {
-        return(f == 0) ? a : h * Math.pow(2, 10 * (f / g - 1)) + a
+    easeInExpo: function (m, l, b, d, k) {
+        return(l == 0) ? b : d * Math.pow(2, 10 * (l / k - 1)) + b
     },
-    easeOutExpo: function (e, f, a, h, g) {
-        return(f == g) ? a + h : h * (-Math.pow(2, -10 * f / g) + 1) + a
+    easeOutExpo: function (m, l, b, d, k) {
+        return(l == k) ? b + d : d * (-Math.pow(2, -10 * l / k) + 1) + b
     },
-    easeInOutExpo: function (e, f, a, h, g) {
-        if(f == 0) {
+    easeInOutExpo: function (m, l, b, d, k) {
+        if(l == 0) {
+            return b
+        }
+        if(l == k) {
+            return b + d
+        }
+        if((l /= k / 2) < 1) {
+            return d / 2 * Math.pow(2, 10 * (l - 1)) + b
+        }
+        return d / 2 * (-Math.pow(2, -10 * --l) + 2) + b
+    },
+    easeInCirc: function (m, l, b, d, k) {
+        return -d * (Math.sqrt(1 - (l /= k) * l) - 1) + b
+    },
+    easeOutCirc: function (m, l, b, d, k) {
+        return d * Math.sqrt(1 - (l = l / k - 1) * l) + b
+    },
+    easeInOutCirc: function (m, l, b, d, k) {
+        if((l /= k / 2) < 1) {
+            return -d / 2 * (Math.sqrt(1 - l * l) - 1) + b
+        }
+        return d / 2 * (Math.sqrt(1 - (l -= 2) * l) + 1) + b
+    },
+    easeInElastic: function (o, n, a, p, q) {
+        var b = 1.70158;
+        var m = 0;
+        var d = p;
+        if(n == 0) {
             return a
         }
-        if(f == g) {
-            return a + h
+        if((n /= q) == 1) {
+            return a + p
         }
-        if((f /= g / 2) < 1) {
-            return h / 2 * Math.pow(2, 10 * (f - 1)) + a
+        if(!m) {
+            m = q * 0.3
         }
-        return h / 2 * (-Math.pow(2, -10 * --f) + 2) + a
-    },
-    easeInCirc: function (e, f, a, h, g) {
-        return -h * (Math.sqrt(1 - (f /= g) * f) - 1) + a
-    },
-    easeOutCirc: function (e, f, a, h, g) {
-        return h * Math.sqrt(1 - (f = f / g - 1) * f) + a
-    },
-    easeInOutCirc: function (e, f, a, h, g) {
-        if((f /= g / 2) < 1) {
-            return -h / 2 * (Math.sqrt(1 - f * f) - 1) + a
-        }
-        return h / 2 * (Math.sqrt(1 - (f -= 2) * f) + 1) + a
-    },
-    easeInElastic: function (r, s, g, k, h) {
-        var f = 1.70158;
-        var e = 0;
-        var l = k;
-        if(s == 0) {
-            return g
-        }
-        if((s /= h) == 1) {
-            return g + k
-        }
-        if(!e) {
-            e = h * 0.3
-        }
-        if(l < Math.abs(k)) {
-            l = k;
-            var f = e / 4
+        if(d < Math.abs(p)) {
+            d = p;
+            var b = m / 4
         } else {
-            var f = e / (2 * Math.PI) * Math.asin(k / l)
+            var b = m / (2 * Math.PI) * Math.asin(p / d)
         }
-        return -(l * Math.pow(2, 10 * (s -= 1)) * Math.sin((s * h - f) * (2 * Math.PI) / e)) + g
+        return -(d * Math.pow(2, 10 * (n -= 1)) * Math.sin((n * q - b) * (2 * Math.PI) / m)) + a
     },
-    easeOutElastic: function (r, s, g, k, h) {
-        var f = 1.70158;
-        var e = 0;
-        var l = k;
-        if(s == 0) {
-            return g
+    easeOutElastic: function (o, n, a, p, q) {
+        var b = 1.70158;
+        var m = 0;
+        var d = p;
+        if(n == 0) {
+            return a
         }
-        if((s /= h) == 1) {
-            return g + k
+        if((n /= q) == 1) {
+            return a + p
         }
-        if(!e) {
-            e = h * 0.3
+        if(!m) {
+            m = q * 0.3
         }
-        if(l < Math.abs(k)) {
-            l = k;
-            var f = e / 4
+        if(d < Math.abs(p)) {
+            d = p;
+            var b = m / 4
         } else {
-            var f = e / (2 * Math.PI) * Math.asin(k / l)
+            var b = m / (2 * Math.PI) * Math.asin(p / d)
         }
-        return l * Math.pow(2, -10 * s) * Math.sin((s * h - f) * (2 * Math.PI) / e) + k + g
+        return d * Math.pow(2, -10 * n) * Math.sin((n * q - b) * (2 * Math.PI) / m) + p + a
     },
-    easeInOutElastic: function (r, s, g, k, h) {
-        var f = 1.70158;
-        var e = 0;
-        var l = k;
-        if(s == 0) {
-            return g
+    easeInOutElastic: function (o, n, a, p, q) {
+        var b = 1.70158;
+        var m = 0;
+        var d = p;
+        if(n == 0) {
+            return a
         }
-        if((s /= h / 2) == 2) {
-            return g + k
+        if((n /= q / 2) == 2) {
+            return a + p
         }
-        if(!e) {
-            e = h * (0.3 * 1.5)
+        if(!m) {
+            m = q * (0.3 * 1.5)
         }
-        if(l < Math.abs(k)) {
-            l = k;
-            var f = e / 4
+        if(d < Math.abs(p)) {
+            d = p;
+            var b = m / 4
         } else {
-            var f = e / (2 * Math.PI) * Math.asin(k / l)
-        } if(s < 1) {
-            return -0.5 * (l * Math.pow(2, 10 * (s -= 1)) * Math.sin((s * h - f) * (2 * Math.PI) / e)) + g
+            var b = m / (2 * Math.PI) * Math.asin(p / d)
+        } if(n < 1) {
+            return -0.5 * (d * Math.pow(2, 10 * (n -= 1)) * Math.sin((n * q - b) * (2 * Math.PI) / m)) + a
         }
-        return l * Math.pow(2, -10 * (s -= 1)) * Math.sin((s * h - f) * (2 * Math.PI) / e) * 0.5 + k + g
+        return d * Math.pow(2, -10 * (n -= 1)) * Math.sin((n * q - b) * (2 * Math.PI) / m) * 0.5 + p + a
     },
-    easeInBack: function (e, f, a, n, h, g) {
-        if(g == undefined) {
-            g = 1.70158
+    easeInBack: function (m, l, b, o, d, k) {
+        if(k == undefined) {
+            k = 1.70158
         }
-        return n * (f /= h) * f * ((g + 1) * f - g) + a
+        return o * (l /= d) * l * ((k + 1) * l - k) + b
     },
-    easeOutBack: function (e, f, a, n, h, g) {
-        if(g == undefined) {
-            g = 1.70158
+    easeOutBack: function (m, l, b, o, d, k) {
+        if(k == undefined) {
+            k = 1.70158
         }
-        return n * ((f = f / h - 1) * f * ((g + 1) * f + g) + 1) + a
+        return o * ((l = l / d - 1) * l * ((k + 1) * l + k) + 1) + b
     },
-    easeInOutBack: function (e, f, a, n, h, g) {
-        if(g == undefined) {
-            g = 1.70158
+    easeInOutBack: function (m, l, b, o, d, k) {
+        if(k == undefined) {
+            k = 1.70158
         }
-        if((f /= h / 2) < 1) {
-            return n / 2 * (f * f * (((g *= (1.525)) + 1) * f - g)) + a
+        if((l /= d / 2) < 1) {
+            return o / 2 * (l * l * (((k *= (1.525)) + 1) * l - k)) + b
         }
-        return n / 2 * ((f -= 2) * f * (((g *= (1.525)) + 1) * f + g) + 2) + a
+        return o / 2 * ((l -= 2) * l * (((k *= (1.525)) + 1) * l + k) + 2) + b
     },
-    easeInBounce: function (e, f, a, h, g) {
-        return h - jQuery.easing.easeOutBounce(e, g - f, 0, h, g) + a
+    easeInBounce: function (m, l, b, d, k) {
+        return d - jQuery.easing.easeOutBounce(m, k - l, 0, d, k) + b
     },
-    easeOutBounce: function (e, f, a, h, g) {
-        if((f /= g) < (1 / 2.75)) {
-            return h * (7.5625 * f * f) + a
+    easeOutBounce: function (m, l, b, d, k) {
+        if((l /= k) < (1 / 2.75)) {
+            return d * (7.5625 * l * l) + b
         } else {
-            if(f < (2 / 2.75)) {
-                return h * (7.5625 * (f -= (1.5 / 2.75)) * f + 0.75) + a
+            if(l < (2 / 2.75)) {
+                return d * (7.5625 * (l -= (1.5 / 2.75)) * l + 0.75) + b
             } else {
-                if(f < (2.5 / 2.75)) {
-                    return h * (7.5625 * (f -= (2.25 / 2.75)) * f + 0.9375) + a
+                if(l < (2.5 / 2.75)) {
+                    return d * (7.5625 * (l -= (2.25 / 2.75)) * l + 0.9375) + b
                 } else {
-                    return h * (7.5625 * (f -= (2.625 / 2.75)) * f + 0.984375) + a
+                    return d * (7.5625 * (l -= (2.625 / 2.75)) * l + 0.984375) + b
                 }
             }
         }
     },
-    easeInOutBounce: function (e, f, a, h, g) {
-        if(f < g / 2) {
-            return jQuery.easing.easeInBounce(e, f * 2, 0, h, g) * 0.5 + a
+    easeInOutBounce: function (m, l, b, d, k) {
+        if(l < k / 2) {
+            return jQuery.easing.easeInBounce(m, l * 2, 0, d, k) * 0.5 + b
         }
-        return jQuery.easing.easeOutBounce(e, f * 2 - g, 0, h, g) * 0.5 + h * 0.5 + a
+        return jQuery.easing.easeOutBounce(m, l * 2 - k, 0, d, k) * 0.5 + d * 0.5 + b
     }
 });
-(function (a) {
-    a.fn.hoverTimeout = function (d, k, b, e) {
+(function (b) {
+    b.fn.hoverTimeout = function (h, f, a, g) {
         return this.each(function () {
-            var f = null,
-                g = a(this);
-            g.hover(function () {
-                clearTimeout(f);
-                f = setTimeout(function () {
-                    k.call(g)
-                }, d)
+            var e = null,
+                d = b(this);
+            d.hover(function () {
+                clearTimeout(e);
+                e = setTimeout(function () {
+                    f.call(d)
+                }, h)
             }, function () {
-                clearTimeout(f);
-                f = setTimeout(function () {
-                    e.call(g)
-                }, b)
+                clearTimeout(e);
+                e = setTimeout(function () {
+                    g.call(d)
+                }, a)
             })
         })
     }
 })(jQuery);
 
 function createTicker() {
-    var b = jQuery(".breaking-news ul").children();
+    var a = jQuery(".breaking-news ul").children();
     tickerItems = new Array();
-    b.each(function (a) {
+    a.each(function (b) {
         tickerItems.push(jQuery(this).html())
     });
     i = 0;
@@ -247,11 +245,11 @@ function rotateTicker() {
 var isInTag = false;
 
 function typetext() {
-    var b = tickerText.substr(c, 1);
-    if(b == "<") {
+    var a = tickerText.substr(c, 1);
+    if(a == "<") {
         isInTag = true
     }
-    if(b == ">") {
+    if(a == ">") {
         isInTag = false
     }
     jQuery(".breaking-news ul").html(tickerText.substr(0, c++));
@@ -267,68 +265,68 @@ function typetext() {
     }
 }
 
-function actinave(e) {
-    var h = window.location.href;
-    e("#navi a").each(function () {
-        if(this.href === h) {
-            var a = e(this).parents("li").children("a").addClass("current")
+function actinave(b) {
+    var d = window.location.href;
+    b("#navi a").each(function () {
+        if(this.href === d) {
+            var e = b(this).parents("li").children("a").addClass("current")
         }
     });
-    e("#navi ul").removeClass("hidden");
-    e("#navi li").hoverTimeout(100, function () {
-        e(this).parent("ul").css("overflow", "visible");
-        e(this).children("ul").filter(":not(:animated)").slideDown()
+    b("#navi ul").removeClass("hidden");
+    b("#navi li").hoverTimeout(100, function () {
+        b(this).parent("ul").css("overflow", "visible");
+        b(this).children("ul").filter(":not(:animated)").slideDown()
     }, 500, function () {
-        e(this).parent("ul").css("overflow", "visible");
-        e(this).children("ul").slideUp(800, "easeInExpo")
+        b(this).parent("ul").css("overflow", "visible");
+        b(this).children("ul").slideUp(800, "easeInExpo")
     });
-    e("#mobilenav").click(function () {
-        e("#navi").slideToggle();
-        e(this).toggleClass("active");
+    b("#mobilenav").click(function () {
+        b("#navi").slideToggle();
+        b(this).toggleClass("active");
         return false
     });
-    e("#top_mobilenav").click(function () {
-        e("#PageList1 ul").slideToggle();
-        e(this).toggleClass("active");
+    b("#top_mobilenav").click(function () {
+        b("#PageList1 ul").slideToggle();
+        b(this).toggleClass("active");
         return false
     });
 
-    function f() {
-        if(e(window).width() > 767) {
-            e("#navi").css("display", "block").removeClass("suball")
+    function a() {
+        if(b(window).width() > 767) {
+            b("#navi").css("display", "block").removeClass("suball")
         } else {
-            if(e(window).width() <= 767 && e("#mobilenav").attr("class") === "active") {
-                e("#navi").css("display", "block").addClass("suball")
+            if(b(window).width() <= 767 && b("#mobilenav").attr("class") === "active") {
+                b("#navi").css("display", "block").addClass("suball")
             } else {
-                if(e(window).width() <= 767 && e("#mobilenav").attr("class") !== "active") {
-                    e("#navi").css("display", "none").addClass("suball")
+                if(b(window).width() <= 767 && b("#mobilenav").attr("class") !== "active") {
+                    b("#navi").css("display", "none").addClass("suball")
                 }
             }
         }
     }
 
-    function g() {
-        if(e(window).width() > 767) {
-            e("#PageList1 ul").css("display", "block")
+    function k() {
+        if(b(window).width() > 767) {
+            b("#PageList1 ul").css("display", "block")
         } else {
-            if(e(window).width() <= 767 && e("#top_mobilenav").attr("class") === "active") {
-                e("#PageList1 ul").css("display", "block")
+            if(b(window).width() <= 767 && b("#top_mobilenav").attr("class") === "active") {
+                b("#PageList1 ul").css("display", "block")
             } else {
-                if(e(window).width() <= 767 && e("#top_mobilenav").attr("class") !== "active") {
-                    e("#PageList1 ul").css("display", "none")
+                if(b(window).width() <= 767 && b("#top_mobilenav").attr("class") !== "active") {
+                    b("#PageList1 ul").css("display", "none")
                 }
             }
         }
     }
-    f();
-    g();
-    e(window).resize(f);
-    e(window).resize(g)
+    a();
+    k();
+    b(window).resize(a);
+    b(window).resize(k)
 }
 
-function seach(a) {
-    (function (e) {
-        var l = {
+function seach(b) {
+    (function (k) {
+        var g = {
             blogURL: "",
             srcBlank: "",
             findText: "Search results for keyword",
@@ -338,74 +336,74 @@ function seach(a) {
             scrthumbSize: 50,
             summaryLength: 100
         };
-        l = e.extend({}, l, a);
-        var b = e("#ajax-search-form"),
-            f = b.find(":text");
-        b.append('<div id="search-result"></div>');
-        var d = e("#search-result");
-        b.on("submit", function () {
-            var g = f.val();
-            d.show().html('<div class="load">' + l.LoadingText + "</div>");
-            e.get((l.blogURL === "" ? window.location.protocol + "//" + window.location.host : l.blogURL) +
-                "/feeds/posts/summary?alt=json-in-script&q=" + g + "&max-results=9999", function (z) {
-                    var q = z.feed.entry,
-                        o, n, h, p, k = "";
-                    if(q !== undefined) {
-                        k = "<h4>" + l.findText + " &quot;" + g + "&quot;</h4>";
-                        k += '<a class="close" href="/">&times;</a><ol>';
-                        for(var m = 0; m < q.length; m++) {
-                            var A = new RegExp(g, "ig"),
-                                h = q[m].title.$t.replace(A, "<mark>" + g + "</mark>");
-                            for(var y = 0; y < q[m].link.length; y++) {
-                                if(q[m].link[y].rel == "alternate") {
-                                    p = q[m].link[y].href
+        g = k.extend({}, g, b);
+        var m = k("#ajax-search-form"),
+            h = m.find(":text");
+        m.append('<div id="search-result"></div>');
+        var a = k("#search-result");
+        m.on("submit", function () {
+            var d = h.val();
+            a.show().html('<div class="load">' + g.LoadingText + "</div>");
+            k.get((g.blogURL === "" ? window.location.protocol + "//" + window.location.host : g.blogURL) +
+                "/feeds/posts/summary?alt=json-in-script&q=" + d + "&max-results=9999", function (t) {
+                    var v = t.feed.entry,
+                        x, e, r, w, l = "";
+                    if(v !== undefined) {
+                        l = "<h4>" + g.findText + " &quot;" + d + "&quot;</h4>";
+                        l += '<a class="close" href="/">&times;</a><ol>';
+                        for(var f = 0; f < v.length; f++) {
+                            var s = new RegExp(d, "ig"),
+                                r = v[f].title.$t.replace(s, "<mark>" + d + "</mark>");
+                            for(var u = 0; u < v[f].link.length; u++) {
+                                if(v[f].link[u].rel == "alternate") {
+                                    w = v[f].link[u].href
                                 }
                             }
-                            if(l.summaryLength > 0) {
-                                if("content" in q[m]) {
-                                    o = q[m].content.$t
+                            if(g.summaryLength > 0) {
+                                if("content" in v[f]) {
+                                    x = v[f].content.$t
                                 } else {
-                                    if("summary" in q[m]) {
-                                        o = q[m].summary.$t
+                                    if("summary" in v[f]) {
+                                        x = v[f].summary.$t
                                     } else {
-                                        o = ""
+                                        x = ""
                                     }
                                 }
-                                o = o.replace(/<\S[^>]*>/g, "");
-                                if(o.length > l.summaryLength) {
-                                    o = o.substring(0, l.summaryLength) + "..."
+                                x = x.replace(/<\S[^>]*>/g, "");
+                                if(x.length > g.summaryLength) {
+                                    x = x.substring(0, g.summaryLength) + "..."
                                 }
-                                o = o.replace(A, "<mark>" + g + "</mark>")
+                                x = x.replace(s, "<mark>" + d + "</mark>")
                             }
-                            if(l.Showthumb === true) {
-                                if("media$thumbnail" in q[m]) {
-                                    n = q[m].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s" + l.scrthumbSize + "-c")
+                            if(g.Showthumb === true) {
+                                if("media$thumbnail" in v[f]) {
+                                    e = v[f].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s" + g.scrthumbSize + "-c")
                                 } else {
-                                    n = l.srcBlank
+                                    e = g.srcBlank
                                 }
                             }
-                            k += '<li><a href="' + p + '" >' + (l.Showthumb === true ? '<img width="' + l.scrthumbSize + '" height="' + l.scrthumbSize +
-                                '" src="' + n + '"/>' : "") + "<strong>" + h + "</strong></a>" + (l.summaryLength > 0 ? "<p>" + o + "</p>" : "") +
+                            l += '<li><a href="' + w + '" >' + (g.Showthumb === true ? '<img width="' + g.scrthumbSize + '" height="' + g.scrthumbSize +
+                                '" src="' + e + '"/>' : "") + "<strong>" + r + "</strong></a>" + (g.summaryLength > 0 ? "<p>" + x + "</p>" : "") +
                                 "</li>"
                         }
-                        k += "</ol>";
-                        d.html(k)
+                        l += "</ol>";
+                        a.html(l)
                     } else {
-                        d.html('<a class="close" href="/">&times;</a><strong>' + l.NotfindText + "</strong>")
+                        a.html('<a class="close" href="/">&times;</a><strong>' + g.NotfindText + "</strong>")
                     }
                 }, "jsonp");
             return false
         });
-        b.on("click", ".close", function () {
-            d.fadeOut();
+        m.on("click", ".close", function () {
+            a.fadeOut();
             return false
         })
     })(jQuery)
 }
 
-function ShowPost1(a) {
-    (function (b) {
-        var g = {
+function ShowPost1(b) {
+    (function (a) {
+        var e = {
             blogURL: "",
             MaxPost: 5,
             idcontaint: "",
@@ -418,89 +416,89 @@ function ShowPost1(a) {
             MonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             tagName: false
         };
-        g = b.extend({}, g, a);
-        var d = b(g.idcontaint);
-        d.html('<div class="box-content"><ul></ul></div>').addClass(g.loadingClass);
-        b.get((g.blogURL === "" ? window.location.protocol + "//" + window.location.host : g.blogURL) + "/feeds/posts/summary" + (g.tagName === false ? "" :
-            "/-/" + g.tagName) + "?max-results=" + g.MaxPost + "&orderby=published&alt=json-in-script", function (m) {
-            var t, q, h, Q, v, s, k, n, l, o, M, f, r, p, P = "",
-                w = m.feed.entry;
-            for(var u = 0; u < w.length; u++) {
-                for(var e = 0; e < w[u].link.length; e++) {
-                    if(w[u].link[e].rel == "alternate") {
-                        t = w[u].link[e].href;
+        e = a.extend({}, e, b);
+        var f = a(e.idcontaint);
+        f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
+        a.get((e.blogURL === "" ? window.location.protocol + "//" + window.location.host : e.blogURL) + "/feeds/posts/summary" + (e.tagName === false ? "" :
+            "/-/" + e.tagName) + "?max-results=" + e.MaxPost + "&orderby=published&alt=json-in-script", function (J) {
+            var E, H, L, d, C, F, K, y, z, I, A, N, G, x, g = "",
+                B = J.feed.entry;
+            for(var D = 0; D < B.length; D++) {
+                for(var O = 0; O < B[D].link.length; O++) {
+                    if(B[D].link[O].rel == "alternate") {
+                        E = B[D].link[O].href;
                         break
                     }
                 }
-                for(var f = 0; f < e; f++) {
-                    if(w[u].link[f].rel == "replies" && w[u].link[f].type == "text/html") {
-                        Q = w[u].link[f].title.split(" ")[0];
+                for(var N = 0; N < O; N++) {
+                    if(B[D].link[N].rel == "replies" && B[D].link[N].type == "text/html") {
+                        d = B[D].link[N].title.split(" ")[0];
                         break
                     }
                 }
-                if("media$thumbnail" in w[u]) {
-                    v = w[u].media$thumbnail.url
+                if("media$thumbnail" in B[D]) {
+                    C = B[D].media$thumbnail.url
                 } else {
-                    v = g.pBlank
-                } if("content" in w[u]) {
-                    h = w[u].content.$t
+                    C = e.pBlank
+                } if("content" in B[D]) {
+                    L = B[D].content.$t
                 } else {
-                    if("summary" in w[u]) {
-                        h = w[u].summary.$t
+                    if("summary" in B[D]) {
+                        L = B[D].summary.$t
                     } else {
-                        h = ""
+                        L = ""
                     }
                 }
-                h = h.replace(/<\S[^>]*>/g, "");
-                if(h.length > g.Summarylength) {
-                    h = h.substring(0, g.Summarylength) + "..."
+                L = L.replace(/<\S[^>]*>/g, "");
+                if(L.length > e.Summarylength) {
+                    L = L.substring(0, e.Summarylength) + "..."
                 }
-                if(w[u] === w[0]) {
-                    v = v.replace(/\/s[0-9]+\-c/g, "/s" + g.FirstImageSize + "-p");
-                    if(v.indexOf("i.ytimg.com/vi/") != -1) {
-                        v = v.replace("default", "0")
+                if(B[D] === B[0]) {
+                    C = C.replace(/\/s[0-9]+\-c/g, "/s" + e.FirstImageSize + "-p");
+                    if(C.indexOf("i.ytimg.com/vi/") != -1) {
+                        C = C.replace("default", "0")
                     }
-                    k = "<p>" + h + "</p>"
+                    K = "<p>" + L + "</p>"
                 } else {
-                    v = v.replace(/\/s[0-9]+\-c/g, "/s" + g.ImageSize + "-p");
-                    k = ""
+                    C = C.replace(/\/s[0-9]+\-c/g, "/s" + e.ImageSize + "-p");
+                    K = ""
                 }
-                q = w[u].title.$t;
-                r = w[u].author[0].name.$t;
-                p = w[u].author[0].gd$image.src;
-                f = w[u].published.$t.substring(0, 10);
-                n = f.substring(0, 4);
-                l = f.substring(5, 7);
-                o = f.substring(8, 10);
-                M = g.MonthNames[parseInt(l, 10) - 1];
-                s = '<div class="uj_thumb"><a title="' + q + '" class=" " href="' + t + '"><img src="' + v +
-                    '"/><span class="uj-vid"></span></a><span class="nb_slide_icon"><span class="inside"><span class="avatar"><img src="' + p +
-                    '"/></span><span class="author">Written by <strong>' + r + "</strong></span></span></span></div>";
-                j = '<a class="more-link" href="' + t + '">Read More</a>';
-                P += '<li><div class="inner-content" >' + s + '<h3><a href="' + t + '">' + q +
-                    '</a></h3><span class="post-meta"><span class="comt"><i class="icon-comments"></i>' + Q +
-                    ' comment</span>  <span class="dd"> <i class="icon-time"></i> ' + o + '</span> <span class="dm">' + M + '</span> <span class="dy">' +
-                    n + ' - </span></span>" + k + " " + j + "</div></li>"
+                H = B[D].title.$t;
+                G = B[D].author[0].name.$t;
+                x = B[D].author[0].gd$image.src;
+                N = B[D].published.$t.substring(0, 10);
+                y = N.substring(0, 4);
+                z = N.substring(5, 7);
+                I = N.substring(8, 10);
+                A = e.MonthNames[parseInt(z, 10) - 1];
+                F = '<div class="uj_thumb"><a title="' + H + '" class=" " href="' + E + '"><img src="' + C +
+                    '"/><span class="uj-vid"></span></a><span class="nb_slide_icon"><span class="inside"><span class="avatar"><img src="' + x +
+                    '"/></span><span class="author">Written by <strong>' + G + "</strong></span></span></span></div>";
+                j = '<a class="more-link" href="' + E + '">Read More</a>';
+                g += '<li><div class="inner-content" >' + F + '<h3><a href="' + E + '">' + H +
+                    '</a></h3><span class="post-meta"><span class="comt"><i class="icon-comments"></i>' + d +
+                    ' comment</span>  <span class="dd"> <i class="icon-time"></i> ' + I + '</span> <span class="dm">' + A + '</span> <span class="dy">' +
+                    y + ' - </span> <span class="auth"> <i class="icon-user"></i>' + G + "</span></span>" + K + " " + j + "</div></li>"
             }
-            b("ul", d).append(P);
-            b(g.idcontaint + "  li:first-child .uj_thumb").hover(function () {
-                b(g.idcontaint).find(".nb_slide_icon ").stop().animate({
+            a("ul", f).append(g);
+            a(e.idcontaint + "  li:first-child .uj_thumb").hover(function () {
+                a(e.idcontaint).find(".nb_slide_icon ").stop().animate({
                     top: 0
                 }, {
                     queue: false,
                     duration: 300
                 })
             }, function () {
-                b(g.idcontaint).find(".nb_slide_icon ").stop().animate({
+                a(e.idcontaint).find(".nb_slide_icon ").stop().animate({
                     top: "-60px"
                 }, {
                     queue: false,
                     duration: 300
                 })
             });
-            if(g.animated) {
-                b("ul", d).addClass("scroll-item");
-                b(g.idcontaint + " .box-content").flexslider({
+            if(e.animated) {
+                a("ul", f).addClass("scroll-item");
+                a(e.idcontaint + " .box-content").flexslider({
                     animation: "slide",
                     selector: ".scroll-item > li",
                     animationLoop: true,
@@ -513,19 +511,19 @@ function ShowPost1(a) {
                     maxItems: 4
                 })
             } else {
-                if(g.tagName != false) {
-                    d.append('<h2 class="uj-box-title"><a href="/search/label/' + encodeURIComponent(g.tagName) +
+                if(e.tagName != false) {
+                    f.append('<h2 class="uj-box-title"><a href="/search/label/' + encodeURIComponent(e.tagName) +
                         '?&max-results=7"><i class="icon-list-ul"></i></a></h2>')
                 }
             }
-            d.removeClass(g.loadingClass)
+            f.removeClass(e.loadingClass)
         }, "jsonp")
     })(jQuery)
 }
 
-function ShowPost2(a) {
-    (function (b) {
-        var g = {
+function ShowPost2(b) {
+    (function (a) {
+        var e = {
             blogURL: "",
             MaxPost: 5,
             idcontaint: "",
@@ -538,62 +536,62 @@ function ShowPost2(a) {
             MonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             tagName: false
         };
-        g = b.extend({}, g, a);
-        var d = b(g.idcontaint);
-        d.html('<div class="box-content"><ul></ul></div>').addClass(g.loadingClass);
-        b.get((g.blogURL === "" ? window.location.protocol + "//" + window.location.host : g.blogURL) + "/feeds/posts/summary" + (g.tagName === false ? "" :
-            "/-/" + g.tagName) + "?max-results=" + g.MaxPost + "&orderby=published&alt=json-in-script", function (l) {
-            var s, p, h, O, u, r, n, o, m, q, k, f, w, M = "",
-                v = l.feed.entry;
-            for(var t = 0; t < v.length; t++) {
-                for(var e = 0; e < v[t].link.length; e++) {
-                    if(v[t].link[e].rel == "alternate") {
-                        s = v[t].link[e].href;
+        e = a.extend({}, e, b);
+        var f = a(e.idcontaint);
+        f.html('<div class="box-content"><ul></ul></div>').addClass(e.loadingClass);
+        a.get((e.blogURL === "" ? window.location.protocol + "//" + window.location.host : e.blogURL) + "/feeds/posts/summary" + (e.tagName === false ? "" :
+            "/-/" + e.tagName) + "?max-results=" + e.MaxPost + "&orderby=published&alt=json-in-script", function (J) {
+            var E, H, K, d, C, F, I, x, y, G, z, L, A, g = "",
+                B = J.feed.entry;
+            for(var D = 0; D < B.length; D++) {
+                for(var N = 0; N < B[D].link.length; N++) {
+                    if(B[D].link[N].rel == "alternate") {
+                        E = B[D].link[N].href;
                         break
                     }
                 }
-                if("media$thumbnail" in v[t]) {
-                    u = v[t].media$thumbnail.url
+                if("media$thumbnail" in B[D]) {
+                    C = B[D].media$thumbnail.url
                 } else {
-                    u = g.pBlank
-                } if("content" in v[t]) {
-                    h = v[t].content.$t
+                    C = e.pBlank
+                } if("content" in B[D]) {
+                    K = B[D].content.$t
                 } else {
-                    if("summary" in v[t]) {
-                        h = v[t].summary.$t
+                    if("summary" in B[D]) {
+                        K = B[D].summary.$t
                     } else {
-                        h = ""
+                        K = ""
                     }
                 }
-                h = h.replace(/<\S[^>]*>/g, "");
-                if(h.length > g.Summarylength) {
-                    h = h.substring(0, g.Summarylength) + "..."
+                K = K.replace(/<\S[^>]*>/g, "");
+                if(K.length > e.Summarylength) {
+                    K = K.substring(0, e.Summarylength) + "..."
                 }
-                if(v[t] === v[0]) {
-                    u = u.replace(/\/s[0-9]+\-c/g, "/s" + g.FirstImageSize + "-p");
-                    if(u.indexOf("img.youtube.com/vi/") != -1) {
-                        u = u.replace("default", "0")
+                if(B[D] === B[0]) {
+                    C = C.replace(/\/s[0-9]+\-c/g, "/s" + e.FirstImageSize + "-p");
+                    if(C.indexOf("img.youtube.com/vi/") != -1) {
+                        C = C.replace("default", "0")
                     }
-                    n = "<p>" + h + "</p>"
+                    I = "<p>" + K + "</p>"
                 } else {
-                    u = u.replace(/\/s[0-9]+\-c/g, "/s" + g.ImageSize + "-p");
-                    n = ""
+                    C = C.replace(/\/s[0-9]+\-c/g, "/s" + e.ImageSize + "-p");
+                    I = ""
                 }
-                p = v[t].title.$t;
-                w = v[t].author[0].name.$t;
-                f = v[t].published.$t.substring(0, 10);
-                o = f.substring(0, 4);
-                m = f.substring(5, 7);
-                q = f.substring(8, 10);
-                k = g.MonthNames[parseInt(m, 10) - 1];
-                r = '<div class="uj_thumb"><a title="' + p + " - Posted by " + w + '" class="thumblab" href="' + s + '"><img src="' + u +
+                H = B[D].title.$t;
+                A = B[D].author[0].name.$t;
+                L = B[D].published.$t.substring(0, 10);
+                x = L.substring(0, 4);
+                y = L.substring(5, 7);
+                G = L.substring(8, 10);
+                z = e.MonthNames[parseInt(y, 10) - 1];
+                F = '<div class="uj_thumb"><a title="' + H + " - Posted by " + A + '" class="thumblab" href="' + E + '"><img src="' + C +
                     '"/></a></div>';
-                M += '<li><div class="inner-content" >' + r + "</div></li>"
+                g += '<li><div class="inner-content" >' + F + "</div></li>"
             }
-            b("ul", d).append(M);
-            if(g.animated) {
-                b("ul", d).addClass("scroll-item");
-                b(g.idcontaint + " .box-content").flexslider({
+            a("ul", f).append(g);
+            if(e.animated) {
+                a("ul", f).addClass("scroll-item");
+                a(e.idcontaint + " .box-content").flexslider({
                     animation: "slide",
                     selector: ".scroll-item > li",
                     animationLoop: true,
@@ -606,31 +604,31 @@ function ShowPost2(a) {
                     maxItems: 4
                 })
             } else {
-                if(g.tagName != false) {
-                    d.append('<h2 class="uj-box-title"><a href="/search/label/' + encodeURIComponent(g.tagName) +
+                if(e.tagName != false) {
+                    f.append('<h2 class="uj-box-title"><a href="/search/label/' + encodeURIComponent(e.tagName) +
                         '?&max-results=7"><i class="icon-list-ul"></i></a></h2>')
                 }
             }
-            d.removeClass(g.loadingClass)
+            f.removeClass(e.loadingClass)
         }, "jsonp")
     })(jQuery)
 }
 window.labelinc = (function () {
-    var b = function (g) {
-        var f = g || {}, h = f.url_blog || window.location.host,
-            a = f.id_labelcontent || "#labelbar";
-        $.get("http://" + h + "/feeds/posts/summary?max-results=0&alt=json-in-script", function (e) {
-            var l = e.feed.category,
-                d = "";
-            if(l !== undefined) {
-                d = "<span>+</span><ul class='sb-item'>";
-                for(var k = 0; k < l.length; k++) {
-                    d += '<li><a href="/search/label/' + encodeURIComponent(l[k].term) + '?&max-results=7">' + l[k].term + "</a></li>"
+    var a = function (e) {
+        var k = e || {}, d = k.url_blog || window.location.host,
+            b = k.id_labelcontent || "#labelbar";
+        $.get("http://" + d + "/feeds/posts/summary?max-results=0&alt=json-in-script", function (h) {
+            var f = h.feed.category,
+                m = "";
+            if(f !== undefined) {
+                m = "<span>+</span><ul class='sb-item'>";
+                for(var g = 0; g < f.length; g++) {
+                    m += '<li><a href="/search/label/' + encodeURIComponent(f[g].term) + '?&max-results=7">' + f[g].term + "</a></li>"
                 }
-                d += "</ul>";
-                $(a).html(d)
+                m += "</ul>";
+                $(b).html(m)
             } else {
-                $(a).html("<span>No Label!</span>")
+                $(b).html("<span>No Label!</span>")
             }
         }, "jsonp");
         $(".menu_item div .lines").click(function () {
@@ -639,14 +637,14 @@ window.labelinc = (function () {
             return false
         })
     };
-    return function (a) {
-        b(a)
+    return function (b) {
+        a(b)
     }
 })();
 
-function NewsTicker(a) {
-    (function (b) {
-        var e = {
+function NewsTicker(b) {
+    (function (a) {
+        var d = {
             blogURL: "",
             MaxPost: 4,
             Speed: 0.1,
@@ -656,58 +654,58 @@ function NewsTicker(a) {
             Container: ".breaking-news",
             MonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         };
-        e = b.extend({}, e, a);
-        b(e.Container).addClass("loading");
-        b.get((e.blogURL === "" ? window.location.protocol + "//" + window.location.host : e.blogURL) + "/feeds/posts/summary?max-results=" + e.MaxPost +
-            "&orderby=published&alt=json-in-script", function (d) {
-                var n, q, s, o, f, l, u, p, m, g, k, r = "",
-                    t = d.feed.entry;
-                if(t !== undefined) {
-                    for(var h = 0; h < t.length; h++) {
-                        for(var K = 0; K < t[h].link.length; K++) {
-                            if(t[h].link[K].rel == "alternate") {
-                                n = t[h].link[K].href
+        d = a.extend({}, d, b);
+        a(d.Container).addClass("loading");
+        a.get((d.blogURL === "" ? window.location.protocol + "//" + window.location.host : d.blogURL) + "/feeds/posts/summary?max-results=" + d.MaxPost +
+            "&orderby=published&alt=json-in-script", function (D) {
+                var J, I, v, x, C, z, F, w, y, B, e, H = "",
+                    G = D.feed.entry;
+                if(G !== undefined) {
+                    for(var A = 0; A < G.length; A++) {
+                        for(var E = 0; E < G[A].link.length; E++) {
+                            if(G[A].link[E].rel == "alternate") {
+                                J = G[A].link[E].href
                             }
                         }
-                        q = t[h].title.$t;
-                        g = t[h].published.$t.substring(0, 10);
-                        s = g.substring(0, 4);
-                        o = g.substring(5, 7);
-                        f = g.substring(8, 10);
-                        l = e.MonthNames[parseInt(o, 10) - 1];
-                        u = t[h].published.$t.substring(11, 16);
-                        p = u.substring(0, 2);
-                        m = u.substring(2, 5);
-                        if(p < 12) {
-                            k = "AM"
+                        I = G[A].title.$t;
+                        B = G[A].published.$t.substring(0, 10);
+                        v = B.substring(0, 4);
+                        x = B.substring(5, 7);
+                        C = B.substring(8, 10);
+                        z = d.MonthNames[parseInt(x, 10) - 1];
+                        F = G[A].published.$t.substring(11, 16);
+                        w = F.substring(0, 2);
+                        y = F.substring(2, 5);
+                        if(w < 12) {
+                            e = "AM"
                         } else {
-                            k = "PM"
-                        } if(p === 0) {
-                            p = 12
+                            e = "PM"
+                        } if(w === 0) {
+                            w = 12
                         }
-                        if(p > 12) {
-                            p = p - 12
+                        if(w > 12) {
+                            w = w - 12
                         }
-                        r += '<li><span title="' + l + " " + f + ", " + s + '" class="date">' + p + "" + m + " " + k + '</span> <a class="title" href="' +
-                            n + '">' + q + "</a></li>"
+                        H += '<li><span title="' + z + " " + C + ", " + v + '" class="date">' + w + "" + y + " " + e + '</span> <a class="title" href="' +
+                            J + '">' + I + "</a></li>"
                     }
-                    b(e.Container).html('<h4>headlines</h4><ul id="newstick">' + r + "</ul>").removeClass("loading");
-                    b("#newstick").ticker({
-                        speed: e.Speed,
-                        direction: e.direction,
-                        titleText: e.titleText,
-                        displayType: e.displayType
+                    a(d.Container).html('<h4>headlines</h4><ul id="newstick">' + H + "</ul>").removeClass("loading");
+                    a("#newstick").ticker({
+                        speed: d.Speed,
+                        direction: d.direction,
+                        titleText: d.titleText,
+                        displayType: d.displayType
                     })
                 } else {
-                    b(e.Container).html("<span>No result!</span>").removeClass("loading")
+                    a(d.Container).html("<span>No result!</span>").removeClass("loading")
                 }
             }, "jsonp")
     })(jQuery)
-}(function (a) {
-    a(window).scroll(function () {
-        if(a(this).scrollTop() > 250) {
-            a("#top").removeAttr("href");
-            a("#top").stop().animate({
+}(function (b) {
+    b(window).scroll(function () {
+        if(b(this).scrollTop() > 250) {
+            b("#top").removeAttr("href");
+            b("#top").stop().animate({
                 height: 50,
                 opacity: 1
             }, {
@@ -715,7 +713,7 @@ function NewsTicker(a) {
                 queue: false
             })
         } else {
-            a("#top").stop().animate({
+            b("#top").stop().animate({
                 height: 50,
                 opacity: 0
             }, {
@@ -724,9 +722,9 @@ function NewsTicker(a) {
             })
         }
     });
-    a(function () {
-        a("#top").click(function () {
-            a("html, body").animate({
+    b(function () {
+        b("#top").click(function () {
+            b("html, body").animate({
                 scrollTop: 0
             }, "slow");
             return false
@@ -734,9 +732,9 @@ function NewsTicker(a) {
     })
 })(jQuery);
 
-function PostSlide(b) {
-    (function (a) {
-        var f = {
+function PostSlide(a) {
+    (function (b) {
+        var k = {
             blogURL: "",
             MaxPost: 9,
             idcontaint: "",
@@ -748,54 +746,54 @@ function PostSlide(b) {
             MonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
             tagName: false
         };
-        f = a.extend({}, f, b);
-        var g = a(f.idcontaint);
-        g.html('<div class="uj_slider_wrap"><ul class="slides"></ul></div>').addClass(f.loadingClass);
-        var h = function (B) {
-            var k, e, d, y, D, A, E, L, C, w, z, H, M = "",
-                G = B.feed.entry;
-            for(var F = 0; F < G.length; F++) {
-                for(var x = 0; x < G[F].link.length; x++) {
-                    if(G[F].link[x].rel == "alternate") {
-                        k = G[F].link[x].href;
+        k = b.extend({}, k, a);
+        var e = b(k.idcontaint);
+        e.html('<div class="uj_slider_wrap"><ul class="slides"></ul></div>').addClass(k.loadingClass);
+        var d = function (g) {
+            var p, q, r, m, K, h, J, t, f, o, l, u, s = "",
+                v = g.feed.entry;
+            for(var I = 0; I < v.length; I++) {
+                for(var n = 0; n < v[I].link.length; n++) {
+                    if(v[I].link[n].rel == "alternate") {
+                        p = v[I].link[n].href;
                         break
                     }
                 }
-                if("media$thumbnail" in G[F]) {
-                    D = G[F].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s" + f.ImageSize);
-                    if(G[F].media$thumbnail.url.indexOf("img.youtube.com") != -1) {
-                        D = G[F].media$thumbnail.url.replace("default", "0")
+                if("media$thumbnail" in v[I]) {
+                    K = v[I].media$thumbnail.url.replace(/\/s[0-9]+\-c/g, "/s" + k.ImageSize);
+                    if(v[I].media$thumbnail.url.indexOf("img.youtube.com") != -1) {
+                        K = v[I].media$thumbnail.url.replace("default", "0")
                     }
                 } else {
-                    D = f.pBlank.replace(/\/s[0-9]+\-c/g, "/s" + f.ImageSize)
-                } if("content" in G[F]) {
-                    d = G[F].content.$t
+                    K = k.pBlank.replace(/\/s[0-9]+\-c/g, "/s" + k.ImageSize)
+                } if("content" in v[I]) {
+                    r = v[I].content.$t
                 } else {
-                    if("summary" in G[F]) {
-                        d = G[F].summary.$t
+                    if("summary" in v[I]) {
+                        r = v[I].summary.$t
                     } else {
-                        d = "<p></p>"
+                        r = "<p></p>"
                     }
                 }
-                d = d.replace(/<\S[^>]*>/g, "");
-                if(d.length > f.Summarylength) {
-                    d = d.substring(0, f.Summarylength) + "..."
+                r = r.replace(/<\S[^>]*>/g, "");
+                if(r.length > k.Summarylength) {
+                    r = r.substring(0, k.Summarylength) + "..."
                 }
-                e = G[F].title.$t;
-                z = G[F].author[0].name.$t;
-                w = G[F].published.$t.substring(0, 10);
-                A = w.substring(0, 4);
-                E = w.substring(5, 7);
-                L = w.substring(8, 10);
-                C = f.MonthNames[parseInt(E, 10) - 1];
-                H = '<a class="morelink" href="' + k + '">Read More</a>';
-                M += '<li class="uj_slider_item"><div class="slider_img"><a title="' + e + '" class="" href="' + k + '"><img src="' + D +
-                    '"/></a></div><div class="slider_caption"><h3><a href="' + k + '">' + e + "</a></h3><p> Posted by " + z + "</p>" + d + " <p>" + H +
+                q = v[I].title.$t;
+                l = v[I].author[0].name.$t;
+                o = v[I].published.$t.substring(0, 10);
+                h = o.substring(0, 4);
+                J = o.substring(5, 7);
+                t = o.substring(8, 10);
+                f = k.MonthNames[parseInt(J, 10) - 1];
+                u = '<a class="morelink" href="' + q + '">Read More »</a>';
+                s += '<li class="uj_slider_item"><div class="slider_img"><a title="' + q + '" class="" href="' + p + '"><img src="' + K +
+                    '"/></a></div><div class="slider_caption"><h3><a href="' + p + '">' + q + "</a></h3><p> Posted by " + l + "</p>" + r + " <p>" + u +
                     "</p></div></li>"
             }
-            g.find("ul.slides").append(M);
-            if(!f.RandompostActive) {
-                a(f.idcontaint + " .uj_slider_wrap").flexslider({
+            e.find("ul.slides").append(s);
+            if(!k.RandompostActive) {
+                b(k.idcontaint + " .uj_slider_wrap").flexslider({
                     animation: "fade",
                     controlNav: true,
                     animationLoop: true,
@@ -803,71 +801,71 @@ function PostSlide(b) {
                     pauseOnHover: true,
                     mousewheel: false
                 });
-                g.removeClass(f.loadingClass)
+                e.removeClass(k.loadingClass)
             }
         };
-        a.get((f.blogURL === "" ? window.location.protocol + "//" + window.location.host : f.blogURL) + "/feeds/posts/summary" + (f.tagName === false ? "" :
-            "/-/" + f.tagName) + "?max-results=0&orderby=published&alt=json-in-script", function (r) {
-            Total_Posts_Number = r.feed.openSearch$totalResults.$t;
-            if(Total_Posts_Number <= f.MaxPost) {
-                f.MaxPost = Total_Posts_Number
+        b.get((k.blogURL === "" ? window.location.protocol + "//" + window.location.host : k.blogURL) + "/feeds/posts/summary" + (k.tagName === false ? "" :
+            "/-/" + k.tagName) + "?max-results=0&orderby=published&alt=json-in-script", function (q) {
+            Total_Posts_Number = q.feed.openSearch$totalResults.$t;
+            if(Total_Posts_Number <= k.MaxPost) {
+                k.MaxPost = Total_Posts_Number
             }
-            var p = [];
-            while(p.length < f.MaxPost) {
-                var d = Math.ceil(Math.random() * Total_Posts_Number);
-                var k = false;
-                for(var e = 0; e < p.length; e++) {
-                    if(p[e] == d) {
-                        k = true;
+            var f = [];
+            while(f.length < k.MaxPost) {
+                var m = Math.ceil(Math.random() * Total_Posts_Number);
+                var h = false;
+                for(var l = 0; l < f.length; l++) {
+                    if(f[l] == m) {
+                        h = true;
                         break
                     }
                 }
-                if(!k) {
-                    p[p.length] = d
+                if(!h) {
+                    f[f.length] = m
                 }
             }
-            if(f.RandompostActive == true) {
-                var s;
-                for(var o = 0; o < f.MaxPost; o++) {
-                    s = a.get((f.blogURL === "" ? window.location.protocol + "//" + window.location.host : f.blogURL) + "/feeds/posts/default" + (f.tagName ===
-                            false ? "" : "/-/" + f.tagName) + "?start-index=" + p[o] + "&max-results=1&orderby=published&alt=json-in-script", h,
+            if(k.RandompostActive == true) {
+                var n;
+                for(var g = 0; g < k.MaxPost; g++) {
+                    n = b.get((k.blogURL === "" ? window.location.protocol + "//" + window.location.host : k.blogURL) + "/feeds/posts/default" + (k.tagName ===
+                            false ? "" : "/-/" + k.tagName) + "?start-index=" + f[g] + "&max-results=1&orderby=published&alt=json-in-script", d,
                         "jsonp")
                 }
-                a.when(s).done(function () {
-                    a(f.idcontaint + " .uj_slider_wrap").flexslider({
+                b.when(n).done(function () {
+                    b(k.idcontaint + " .uj_slider_wrap").flexslider({
                         animation: "fade",
                         selector: ".slides > li",
                         animationLoop: true,
                         smoothHeight: true,
                         pauseOnHover: true,
                         mousewheel: false,
-                        initDelay: f.MaxPost * 700,
+                        initDelay: k.MaxPost * 700,
                         before: function () {
-                            a(f.idcontaint).find(".slider_caption").stop().animate({
+                            b(k.idcontaint).find(".slider_caption").stop().animate({
                                 left: 100,
                                 opacity: 0
                             }, 2000);
-                            a(f.idcontaint).find(".caption").stop().animate({
+                            b(k.idcontaint).find(".caption").stop().animate({
                                 left: 0,
                                 opacity: 0
                             }, 2000)
                         },
                         after: function () {
-                            a(f.idcontaint).find(".slider_caption").stop().animate({
+                            b(k.idcontaint).find(".slider_caption").stop().animate({
                                 left: 10,
                                 opacity: 1
                             }, 2000);
-                            a(f.idcontaint).find(".caption").stop().animate({
+                            b(k.idcontaint).find(".caption").stop().animate({
                                 left: 50,
                                 opacity: 1
                             }, 2000)
                         }
                     });
-                    g.removeClass(f.loadingClass)
+                    e.removeClass(k.loadingClass)
                 })
             } else {
-                a.get((f.blogURL === "" ? window.location.protocol + "//" + window.location.host : f.blogURL) + "/feeds/posts/default" + (f.tagName ===
-                    false ? "" : "/-/" + f.tagName) + "?max-results=" + f.MaxPost + "&orderby=published&alt=json-in-script", h, "jsonp")
+                b.get((k.blogURL === "" ? window.location.protocol + "//" + window.location.host : k.blogURL) + "/feeds/posts/default" + (k.tagName ===
+                    false ? "" : "/-/" + k.tagName) + "?max-results=" + k.MaxPost + "&orderby=published&alt=json-in-script", d, "jsonp")
             }
         }, "jsonp")
     })(jQuery)
