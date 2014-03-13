@@ -788,7 +788,7 @@ function PostSlide(b) {
                 C = f.MonthNames[parseInt(E, 10) - 1];
                 H = '<a class="morelink" href="' + k + '">Read More</a>';
                 M += '<li class="uj_slider_item"><div class="slider_img"><a title="' + e + '" class="" href="' + k + '"><img src="' + D +
-                    '"/></a></div><div class="slider_caption"><h3><a href="' + k + '">' + e + "</a></h3><p>" + H + "</p></div></li>"
+                    '"/></a></div><div class="slider_caption"><h3><a href="' + k + '">' + e + "</a></h3>" + d + "<p>" + H + "</p></div></li>"
             }
             g.find("ul.slides").append(M);
             if(!f.RandompostActive) {
