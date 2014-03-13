@@ -480,7 +480,7 @@ function ShowPost1(a) {
                 P += '<li><div class="inner-content" >' + s + '<h3><a href="' + t + '">' + q +
                     '</a></h3><span class="post-meta"><span class="comt"><i class="icon-comments"></i>' + Q +
                     ' comment</span>  <span class="dd"> <i class="icon-time"></i> ' + o + '</span> <span class="dm">' + M + '</span> <span class="dy">' +
-                    n + ' - </span> <span class="auth"> <i class="icon-user"></i>' + r + "</span></span>" + k + " " + j + "</div></li>"
+                    n + ' - </span></span>" + k + " " + j + "</div></li>"
             }
             b("ul", d).append(P);
             b(g.idcontaint + "  li:first-child .uj_thumb").hover(function () {
