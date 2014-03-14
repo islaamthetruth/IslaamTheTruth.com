@@ -739,7 +739,7 @@ function PostSlide(b) {
             MaxPost: 9,
             idcontaint: "",
             ImageSize: 500,
-            Summarylength: 150,
+            Summarylength: 500,
             RandompostActive: true,
             loadingClass: "loadingz",
             pBlank: "",
